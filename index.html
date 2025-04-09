@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danz Store</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f1115;
+      color: #ecf0f1;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    .payment-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 280px;
+      height: 100%;
+      background: linear-gradient(145deg, #1a2639, #0d1018);
+      color: white;
+      padding: 20px;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6);
+      transition: left 0.4s ease-in-out;
+      z-index: 1000;
+    }
+    .payment-menu.show {
+      left: 0;
+    }
+    .product {
+      background: #1a1d29;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .product h3 {
+      margin: 0;
+      color: #00d2ff;
+    }
+    .product button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #00d2ff;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    .product button:hover {
+      background: #009ec3;
+    }
+    .admin-info {
+      background: #2c3e50;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .admin-info h4 {
+      margin: 0 0 10px 0;
+      color: #ecf0f1;
+    }
+    .admin-info p {
+      margin: 0;
+      color: #bdc3c7;
+    }
+    .qris-button, .wa-button {
+      display: block;
+      margin-top: 20px;
+      padding: 12px;
+      background: #00c3ff;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #00c3ff;
+    }
+    .qris-button:hover, .wa-button:hover {
+      background: #007fa6;
+      box-shadow: 0 0 20px #007fa6;
+    }
+    .payment-option {
+  padding: 12px 20px;
+  margin: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.option-suntik {
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: black;
+}
+
+.option-jasher {
+  background: linear-gradient(135deg, #24c6dc, #514a9d);
+  color: white;
+}
+
+.option-tampilan {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  color: black;
+}
+
+.payment-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255,255,255,0.2);
+}
+.payment-option i {
+  margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
+  font-size: 20px; /* Ukuran ikon */
+  vertical-align: middle; /* Menyelaraskan ikon dengan teks */
+}
+
+.payment-option {
+  padding: 12px 20px;
+  margin: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.payment-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+  </style>
+</head>
+  <!-- Link Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <h1>Danz Store </h1>
+  </header>  <div class="payment-menu" id="paymentMenu">
+    <h2>Pembayaran</h2><a
+    <!-- Tombol Produk -->
+<!-- Tombol Produk dengan Ikon -->
+<a href="https://wa.me/6287769354039?text=Halo%20Admin%2C%20saya%20mau%20BUY%20SUNTIK" target="_blank">
+  <div class="payment-option option-suntik">
+    <i class="fas fa-syringe"></i> BUY SUNTIK
+  </div>
+</a>
+
+<a href="https://wa.me/6287769354039?text=Halo%20Admin%2C%20saya%20mau%20BUY%20JASHER" target="_blank">
+  <div class="payment-option option-jasher">
+    <i class="fas fa-cogs"></i> BUY JASHER
+  </div>
+</a>
+
+<a href="https://wa.me/6283106133182?text=Halo%20Admin%2C%20saya%20mau%20BUY%20TAMPILAN%20KAYA%20ANDA" target="_blank">
+  <div class="payment-option option-tampilan">
+    <i class="fas fa-tv"></i> BUY TAMPILAN KAYA ANDA
+  </div>
+</a>
+
+<!-- Tombol Kontak dan Pembayaran dengan Ikon -->
+<a href="https://wa.me/6287769354039?text=Halo%20Admin%2C%20saya%20ingin%20BAYAR%20VIA%20QRIS" target="_blank">
+  <div class="payment-option" style="background: linear-gradient(135deg, #f7971e, #ffd200); color: black;">
+    <i class="fas fa-qrcode"></i> BAYAR VIA QRIS KE ADMIN
+  </div>
+</a>
+
+<a href="https://wa.me/6287769354039" target="_blank">
+  <div class="payment-option" style="background: linear-gradient(135deg, #25d366, #128c7e); color: white;">
+    <i class="fab fa-whatsapp"></i> KONTAK ADMIN
+  </div>
+</a>
+
+<a href="https://t.me/Danzgz" target="_blank">
+  <div class="payment-option" style="background: linear-gradient(135deg, #0088cc, #005580); color: white;">
+    <i class="fab fa-telegram-plane"></i> TELE ADMIN
+  </div>
+</a>
+
+<a href="https://whatsapp.com/channel/0029VbAMa4G5kg7EYOPqXG14" target="_blank">
+  <div class="payment-option" style="background: linear-gradient(135deg, #9d50bb, #6e48aa); color: white;">
+    <i class="fab fa-whatsapp"></i> TESTIMONI ADMIN
+  </div>
+</a>
+
+<a href="https://files.catbox.moe/fe6oe5.mp4" target="_blank">
+  <div class="payment-option" style="background: linear-gradient(135deg, #9d50bb, #6e48aa); color: white;">
+    <i class="fab fa-whatsapp"></i> BOKEP FREE
+  </div>
+</a>
+
+  </div>  <div class="product">
+    <h3>Panel 1GB - 10GB</h3>
+    <button onclick="hubungiAdmin('Panel 1-10GB')">Hubungi Admin</button>
+  </div>
+  <div class="product">
+    <h3>Reseller Panel</h3>
+    <button onclick="hubungiAdmin('Reseller Panel')">Hubungi Admin</button>
+  </div>
+  <div class="product">
+    <h3>Admin Panel</h3>
+    <button onclick="hubungiAdmin('Admin Panel')">Hubungi Admin</button>
+  </div>
+  <div class="product">
+    <h3>Owner Panel</h3>
+    <button onclick="hubungiAdmin('Owner Panel')">Hubungi Admin</button>
+  </div>
+  <div class="product">
+    <h3>Partner Panel</h3>
+    <button onclick="hubungiAdmin('Partner Panel')">Hubungi Admin</button>
+  </div>
+  <div class="product">
+    <h3>Tangan Kanan Panel</h3>
+    <button onclick="hubungiAdmin('Tangan Kanan Panel')">Hubungi Admin</button>
+  </div>  <div class="admin-info">
+    <h4>Kontak Admin</h4>
+    <p>0877-6935-4039 Nomor Owner Theme 0831-0613-3182</p>
+  </div>  <script>
+    const menu = document.getElementById("paymentMenu");
+
+    function toggleMenu() {
+      menu.classList.toggle("show");
+    }
+
+    function hubungiAdmin(produk) {
+      const pesan = `Halo Admin, saya ingin membeli ${produk}`;
+      window.open(`https://wa.me/6287769354039?text=${encodeURIComponent(pesan)}`, '_blank');
+    }
+
+    window.addEventListener("click", function(event) {
+      if (!event.target.closest(".payment-menu") && !event.target.closest(".menu-toggle")) {
+        menu.classList.remove("show");
+      }
+    });
+  </script></body>
+</html>
